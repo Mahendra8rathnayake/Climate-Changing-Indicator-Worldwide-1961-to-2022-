@@ -1,0 +1,84 @@
+# 🌡️ Global Temperature Prediction Project
+
+## Project Overview
+This project analyzes **global temperature changes** from 1961 to 2022 across multiple countries. The goal is to predict temperature changes using three machine learning models:  
+
+1. **Linear Regression**  
+2. **Random Forest Regressor**  
+3. **Neural Network (Deep Learning)**  
+
+The dataset includes country-level temperature indicators and has been transformed into a long format for modeling.
+
+---
+
+## Dataset Snapshot
+| Country                      | Year | Temperature |
+|-------------------------------|------|------------|
+| Afghanistan, Islamic Rep. of | 1961 | -0.113     |
+| Albania                      | 1961 | 0.627      |
+| Algeria                      | 1961 | 0.164      |
+| American Samoa               | 1961 | 0.079      |
+| Andorra, Principality of     | 1961 | 0.736      |
+
+---
+
+## Data Visualization
+### Temperature Trends Across Countries
+![Temperature Trend Example](./images/temperature_trend.png)
+*This plot shows the annual temperature trend for selected countries.*
+
+### Streamlit Dashboard Screenshot
+![Streamlit Dashboard](./images/streamlit_dashboard.png)
+*Interactive dashboard allows users to explore temperature trends by country and year.*
+
+---
+
+## Modeling Approach
+1. **Data Preprocessing**
+   - Convert dataset to long format using `pd.melt`
+   - Drop missing values
+   - Encode countries with `LabelEncoder`
+   - Train-test split (80/20)
+2. **Machine Learning Models**
+   - **Linear Regression:** Baseline linear model
+   - **Random Forest Regressor:** Ensemble method with 300 trees
+   - **Neural Network:** Feedforward model with layers 32 → 16 → 1
+3. **Evaluation Metrics**
+   - Mean Absolute Error (MAE)
+   - Root Mean Squared Error (RMSE)
+
+---
+
+## Model Performance
+
+| Model               | MAE    | RMSE   |
+|--------------------|--------|--------|
+| Linear Regression  | 0.3458 | 0.4549 |
+| Random Forest      | 0.6546 | 0.6546 |
+| Neural Network     | 0.4001 | 0.4802 |
+
+### Model Comparison Visualization
+![Model Comparison](./images/model_comparison.png)
+*Shows MAE for each model for easy comparison.*
+
+---
+
+## Key Insights
+- Linear Regression **outperformed** the more complex models, indicating a mostly linear trend in global temperatures.  
+- Neural Network was competitive, showing it can capture nonlinear patterns.  
+- Random Forest struggled to generalize on this dataset.
+
+---
+
+## Tools & Libraries
+- Python: `pandas`, `numpy`, `scikit-learn`, `tensorflow`, `matplotlib`, `seaborn`  
+- Streamlit: Interactive visualization dashboard  
+
+---
+
+## How to Run
+1. Clone the repository
+2. Install dependencies:
+```bash
+pip install pandas numpy scikit-learn tensorflow matplotlib seaborn streamlit
+
